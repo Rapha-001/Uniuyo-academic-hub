@@ -15,10 +15,10 @@ st.set_page_config(page_title="UniUyo Academic Hub", page_icon="🎓", layout="w
 
 # PUT YOUR REAL EMAIL AND 16-LETTER GOOGLE APP PASSWORD HERE
 SENDER_EMAIL = "capzi01c@gmail.com"
-SENDER_PASSWORD = "qaktpmibpdoklate"
+EMAIL_PASS = st.secrets["EMAIL_PASS"]
 ADMIN_USERNAME = "caleb"
 
-DB_URL = "postgresql://neondb_owner:npg_keSmv5Xc1HFN@ep-purple-queen-am6q3mtg.c-5.us-east-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require"
+DB_URL = st.secrets["DB_URL"]
 
 cloudinary.config(
     cloud_name="dycllasey",
