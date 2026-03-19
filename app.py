@@ -261,8 +261,35 @@ except Exception as e:
     st.error(f"Database connection failed. Please check your DB_URL. Error: {e}")
 
 local_css()
-DEPTS_LIST = ["Computer Engineering", "Electrical Engineering", "Mechanical Engineering", "Civil Engineering", "Law",
-              "Medicine", "Pharmacy", "Accounting"]
+DEPTS_LIST = [
+    "Accounting", "Actuarial Science", "Agricultural Economics And Extension",
+    "Agricultural Engineering", "Agronomy", "Agro Forestry", "Anatomy",
+    "Animal Science", "Architecture", "Banking And Finance", "Biochemistry",
+    "Biology", "Botany And Ecological Studies", "Brewing Science And Technology",
+    "Building", "Business Administration", "Business Management",
+    "Chemical Engineering", "Chemistry", "Civil Engineering",
+    "Communication Arts", "Computer Engineering", "Computer Science",
+    "Crop Science", "Curriculum Studies Educational Mgt. And Planning",
+    "Early Childhood And Special Education", "Economics", "Educational Foundation",
+    "Educational Technology And Library Science", "Electrical/Electronics Engineering",
+    "English", "Environmental Health Management", "Environmental Management",
+    "Environmental Management And Conservation", "Estate Management",
+    "Fine And Industrial Arts", "Fisheries And Aquaculture", "Food Engineering",
+    "Food Science And Technology", "Foreign Languages", "Forestry And Wildlife",
+    "French", "Geoinformatics And Surveying", "Geography And Regional Planning",
+    "History And International Studies", "Home Economics", "Institute Of Education",
+    "Insurance", "Law", "Linguistics And Nigerian Languages", "Liguistics – Efik",
+    "Marketing", "Mathematics", "Mechanical Engineering",
+    "Medical Microbiology And Parasitology", "Medicine And Surgery",
+    "Microbiology", "Music", "Petroleum Engineering",
+    "Pharmacognosy And Natural Medicine", "Pharmacology And Toxicology",
+    "Pharmacy", "Philosophy", "Physical And Health Education", "Physics",
+    "Physiology", "Political Science And Public Administration",
+    "Postgraduate Diploma In Education", "Psychology", "Quantity Surveying",
+    "Religious Cultural Studies", "Science Education", "Sociology And Anthropology",
+    "Soil Science", "Statistics", "Theatre Arts", "Urban And Regional Planning",
+    "Vocational Education", "Waste Management Studies", "Zoology"
+]
 
 if 'logged_in' not in st.session_state: st.session_state['logged_in'] = False
 if 'user_info' not in st.session_state: st.session_state['user_info'] = None
@@ -280,7 +307,7 @@ if not st.session_state['logged_in']:
     with auth_mode[0]:
         with st.form("login_form"):
             st.subheader("Welcome Back")
-            login_user = st.text_input("Username")
+            login_user = st.text_input("Username").strip()
             login_pw = st.text_input("Password", type="password")
             submit_login = st.form_submit_button("Access Dashboard", use_container_width=True)
 
@@ -305,8 +332,8 @@ if not st.session_state['logged_in']:
     with auth_mode[1]:
         with st.form("signup_form"):
             st.subheader("Create New Account")
-            new_user = st.text_input("Choose Username")
-            new_email = st.text_input("University Email")
+            new_user = st.text_input("Choose Username").strip()
+            new_email = st.text_input("University Email").strip()
             new_dept = st.selectbox("Select Your Department", DEPTS_LIST)
             pic_upload = st.file_uploader("Upload Profile Picture (Optional)", type=['png', 'jpg', 'jpeg'])
             new_pw = st.text_input("Create Password", type="password")
