@@ -15,7 +15,7 @@ st.set_page_config(page_title="UniUyo Academic Hub", page_icon="🎓", layout="w
 
 # PUT YOUR REAL EMAIL AND 16-LETTER GOOGLE APP PASSWORD HERE
 SENDER_EMAIL = "capzi01c@gmail.com"
-EMAIL_PASS = st.secrets["EMAIL_PASS"]
+SENDER_PASSWORD = st.secrets["EMAIL_PASS"]
 ADMIN_USERNAME = "caleb"
 
 DB_URL = st.secrets["DB_URL"]
