@@ -383,7 +383,8 @@ DEPTS_LIST = [
     "Education (Social Science)",
     "Education (Social Studies)",
     "Education (Fine Art)",
-    "Pre-Primary and Primary Education"
+    "Pre-Primary and Primary Education",
+    "Software Engineering"
 ]
 
 if 'logged_in' not in st.session_state: st.session_state['logged_in'] = False
